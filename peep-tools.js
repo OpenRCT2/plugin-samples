@@ -13,7 +13,7 @@ var setGuestClothing = function(tshirtColour, trousersColour) {
 
 var main = function() {
     // Add a menu item under the map icon on the top toolbar
-    context.registerMenuItem("Set guest clothes", function() {
+    ui.registerMenuItem("Set guest clothes", function() {
         setGuestClothing(14, 17);
     });
 };

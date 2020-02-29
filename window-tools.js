@@ -25,7 +25,7 @@ var organiseWindows = function() {
 
 var main = function() {
     // Add a menu item under the map icon on the top toolbar
-    context.registerMenuItem("Organise windows", function() {
+    ui.registerMenuItem("Organise windows", function() {
         organiseWindows();
     });
 
