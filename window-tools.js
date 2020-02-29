@@ -24,6 +24,14 @@ var organiseWindows = function() {
 };
 
 var main = function() {
+    // Add a menu item under the map icon on the top toolbar
+    context.registerMenuItem("Organise windows", function() {
+        organiseWindows();
+    });
+
+    // Register a new intent that calls our function. The player can invoke the intent via the UI or using
+    // a keyboard shortcut which the player can configure. Make sure your intent has a unique key that will
+    // not clash with any other plugin. Prefixing the key with your plugin name is encouraged.
     context.registerIntent({
         key: 'window-tools.organisewindows',
         title: 'Organises all opened windows',
@@ -32,14 +40,14 @@ var main = function() {
     });
 };
 
-return {
+registerPlugin({
     name: 'Window Tools',
     version: '1.0',
     authors: ['OpenRCT2'],
 
     // Our script does not affect the game state so we use the client type which
     // allows players to use the plugin independently from the multiplayer server.
-    type: 'client',
+    type: 'local',
 
     main: main
-};
+});

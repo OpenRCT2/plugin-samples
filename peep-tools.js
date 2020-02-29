@@ -12,19 +12,16 @@ var setGuestClothing = function(tshirtColour, trousersColour) {
 }
 
 var main = function() {
-    context.registerIntent({
-        key: 'random.setguestclothing',
-        title: 'Set guest clothes',
-        action: function() {
-            setGuestClothing(14, 17);
-        }
+    // Add a menu item under the map icon on the top toolbar
+    context.registerMenuItem("Set guest clothes", function() {
+        setGuestClothing(14, 17);
     });
 };
 
-return {
+registerPlugin({
     name: 'Peep Tools',
     version: '1.0',
     authors: ['OpenRCT2'],
-    type: 'default',
+    type: 'remote',
     main: main
-};
+});

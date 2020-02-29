@@ -27,24 +27,21 @@ var main = function() {
 
     // If we do not use the var keyword then the variable acts as a global shared between all plugins and
     // the console. The following code allows the console and other plugins to use our functions.
+    samples = samples || {};
     samples.map_tools = {
         destroyAllFootpathItems: destroyAllFootpathItems
     };
 
-    // Register a new intent that calls our function. The player can invoke the intent via the UI or using
-    // a keyboard shortcut which the player can configure. Make sure your intent has a unique key that will
-    // not clash with any other plugin. Prefixing the key with your plugin name is encouraged.
-    context.registerIntent({
-        key: 'samples.map-tools.destoryallfootpathitems',
-        title: 'Destory all footpaths',
-        action: destroyAllFootpathItems
+    // Add a menu item under the map icon on the top toolbar
+    context.registerMenuItem("Destory all footpaths", function() {
+        destroyAllFootpathItems();
     });
 };
 
-return {
+registerPlugin({
     name: 'Map Tools',
     version: '1.0',
     authors: ['OpenRCT2'],
-    type: 'default',
+    type: 'remote',
     main: main
-};
+});
