@@ -2,11 +2,11 @@
 
 // #5827: change guest's clothes colours 
 var setGuestClothing = function(tshirtColour, trousersColour) {
-    for (var i = 0; i < map.things; i++) {
-        var thing = map.getThing(i);
-        if (thing && thing.type === 'peep') {
-            thing.tshirtColour = tshirtColour;
-            thing.trousersColour = trousersColour;
+    for (var i = 0; i < map.numEntities; i++) {
+        var entity = map.getEntity(i);
+        if (entity && entity.type === 'peep') {
+            entity.tshirtColour = tshirtColour;
+            entity.trousersColour = trousersColour;
         }
     }
 }

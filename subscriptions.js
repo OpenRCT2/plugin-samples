@@ -6,7 +6,7 @@ var main = function() {
     try {
         park.postMessage({
             type: "award",
-            text: "{RED}subscriptions.js has been initialised!"
+            text: "subscriptions.js has been initialised!"
         });
     } catch (error) {
         console.log(error);

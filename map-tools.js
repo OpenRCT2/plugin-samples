@@ -13,7 +13,7 @@ var destroyAllFootpathItems = function() {
 
                 // If the element is a footpath, set the broken flag to true
                 if (element.type === 'footpath') {
-                    element.broken = true;
+                    element.isAdditionBroken = true;
                 }
             }
         }
@@ -27,7 +27,9 @@ var main = function() {
 
     // If we do not use the var keyword then the variable acts as a global shared between all plugins and
     // the console. The following code allows the console and other plugins to use our functions.
-    samples = samples || {};
+    if (typeof samples === 'undefined') {
+        samples = {};
+    }
     samples.map_tools = {
         destroyAllFootpathItems: destroyAllFootpathItems
     };
