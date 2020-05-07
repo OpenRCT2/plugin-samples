@@ -35,7 +35,7 @@ var main = function() {
     };
 
     // Add a menu item under the map icon on the top toolbar
-    ui.registerMenuItem("Destory all footpaths", function() {
+    ui.registerMenuItem("Destroy all footpaths", function() {
         destroyAllFootpathItems();
     });
 };
